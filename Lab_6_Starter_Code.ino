@@ -26,7 +26,7 @@
 #include <SPI.h>
 #include <SD.h>
 
-const int chipSelect = 4;
+const int chipSelect = 10;
 
 void setup() {
   // Open serial communications and wait for port to open:
@@ -53,10 +53,11 @@ void loop() {
   String dataString = "";
 
   // read three sensors and append to the string:
-  for (int analogPin = 0; analogPin < 3; analogPin++) {
+  //for (int analogPin = 0; analogPin < 3; analogPin++) {
     int sensor = analogRead(analogPin);
+    int analogPin = 0;
     dataString += String(sensor);
-    if (analogPin < 2) {
+    // if (analogPin < 2) {
       dataString += ",";
     }
   }
